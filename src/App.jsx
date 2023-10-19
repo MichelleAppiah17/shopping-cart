@@ -5,6 +5,7 @@ import ItemCards from './components/ItemCards';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [showItemCards, setShowItemCards] = useState(true);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -16,8 +17,8 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      <ItemCards products={products} />
+      <NavBar setShowItemCards={setShowItemCards} />
+      {showItemCards &&<ItemCards products={products} />}
     </>
   );
 }

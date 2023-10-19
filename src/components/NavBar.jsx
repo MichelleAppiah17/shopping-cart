@@ -1,21 +1,24 @@
-import React from 'react'
+import React from 'react';
+import HomeButton from './Home';
+import StoreButton from './Store';
 
-function NavBar() {
+function NavBar({ setShowItemCards, setBackgroundWhite, isBackgroundWhite }) {
   return (
-    <div className='navBar'>
-        <div className="boutiqueName">
-            <h1>Chic Boutique</h1>
+    <div className="navBar">
+      <div className="boutiqueName">
+        <h1>Chic Boutique</h1>
+      </div>
+      <input placeholder="search" />
+      <div className="navBarButtons">
+        <HomeButton setShowItemCards={setShowItemCards} setBackgroundWhite={setBackgroundWhite} />
+        <StoreButton setShowItemCards={setShowItemCards} setBackgroundWhite={setBackgroundWhite} isBackgroundWhite={isBackgroundWhite} />
+        <div className="navBarButton">
+          <button>Cart</button>
         </div>
-        <input
-        placeholder='search'
-        />
-        <div className='navBarButtons'>
-            <div className="navBarButton"><button>Home</button></div>
-            <div className="navBarButton"><button>Store</button></div>
-            <div className="navBarButton"><button>Cart</button></div>
-        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
+
