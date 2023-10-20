@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ItemCards({ products }) {
+function ItemCards({ products, addToCart }) {
   return (
     <div className='itemCards'>
       {products && products.length > 0 ? (
@@ -14,7 +14,9 @@ function ItemCards({ products }) {
               <div className='price'>{`$${product.price}`}</div>
             </div>
             <div>
-              <button className='addToCartBtn'>ADD TO CART</button>
+              <button className='addToCartBtn' onClick={() => addToCart(product)}>
+                ADD TO CART
+              </button>
             </div>
           </div>
         ))
@@ -26,5 +28,7 @@ function ItemCards({ products }) {
 }
 
 export default ItemCards;
+
+
 
 

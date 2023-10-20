@@ -14,6 +14,8 @@ function App() {
   const [cartVisibility, setCartVisible] = useState(false);
   const [itemsInCart, setItems] = useState([]);
 
+  
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -22,9 +24,13 @@ function App() {
       });
   }, []);
 
+  const addToCart = (product) => {
+    setItems([...itemsInCart, product]);
+  };
+
   return (
     <div>
-      <Cart visibility={cartVisibility} products={itemsInCart}/>
+      <Cart visibility={cartVisibility} products={itemsInCart} onClose={() => setCartVisible(false)}/>
       <div className="navBar">
         <div className="boutiqueName">
           <h1>Chic Boutique</h1>
@@ -39,14 +45,17 @@ function App() {
             setBackgroundWhite={setBackgroundWhite}
           />
           <div>
-            <button onClick={() => setCartVisible(true)}>cart</button>
+            <button onClick={() => setCartVisible(true)} >
+              cart
+              {itemsInCart.length > 0 && <span className='itemCount'>{itemsInCart.length}</span>}
+            </button>
           </div>
         </div>
       </div>
 
       {showItemCards && (
         <div className="itemCards">
-          <ItemCards products={products} />
+          <ItemCards products={products} addToCart={addToCart}/>
         </div>
       )}
     </div>

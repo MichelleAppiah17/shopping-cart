@@ -9,7 +9,8 @@ function Cart({
 }) {
   return (
     <div className='cart' style={{display: visibility ? "block" : "none"}}>
-        <div className='Cartheader'>
+      <div className='shoppingCart'>
+        <div className='cartHeader'>
             <h2>Your Cart</h2>
             <button className='btn close-btn' onClick={onClose}>X</button>
         </div>
@@ -21,10 +22,10 @@ function Cart({
             )}
             {products.map(product => (
               <div className='cartItem' key={product.id}>
-                <img src={product.image} alt={product.name}/>
+                <img src={product.image} alt={product.title}/>
                 <div className='itemInfo'>
-                    <h3>{product.name}</h3>
-                    <span className='itemPrice'>{product.price * product.count}$</span>
+                    <h3>{product.title}</h3>
+                    <span className='itemPrice'>{product.price }$</span>
                 </div>
                  <select className='count' value={product.count} onChange={(event) => {
                     quantityChange(product.id, event.target.value);
@@ -40,6 +41,8 @@ function Cart({
             ))}
             {products.length > 0 && <button className='btn checkoutBtn'>proceed to checkout</button>}
         </div>
+      </div>
+        
     </div>
   )
 }
