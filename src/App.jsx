@@ -23,9 +23,22 @@ function App() {
   }, []);
 
   const addToCart = (product) => {
-    const newItem = { ...product, count: 1 }; 
+  const existingItem = cartItems.find((item) => item.id === product.id);
+
+  if (existingItem) {
+    const updatedCart = cartItems.map((item) => {
+      if (item.id === product.id) {
+        item.count += 1;
+      }
+      return item;
+    });
+    setCartItems(updatedCart);
+  } else {
+    const newItem = { ...product, count: 1 };
     setCartItems([...cartItems, newItem]);
-  };
+  }
+};
+
 
   const removeProduct = (productId) => {
     const updatedCart = cartItems.filter((item) => item.id !== productId);

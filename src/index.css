@@ -6,6 +6,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+    width: 100%;
     background-color: rgb(252, 236, 216);
     box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
     position: sticky;
@@ -13,7 +14,8 @@ body{
 }
 .navBarButtons{
     display: flex;
-    justify-content: space-between;
+    margin-right: 10px;
+   
 }
 input{
     height: 25px;
@@ -23,7 +25,7 @@ input{
     border: none;
 }
 .navBarButton {
-    margin: 0 30px;
+    margin: 0 5px;
 }
 button{
     background-color: rgb(252, 236, 216);
@@ -172,4 +174,14 @@ img{
     color: rgb(202, 13, 92,0.9);
     font-size: 20px;
     font-weight: bolder;
+}
+.itemCount{
+    display: inline;
+    border-radius: 50%;
+    background-color: #f35e5e;
+    color: #ffff;
+    padding: 5px;
+}
+.navBarButton:active{
+    border-bottom: 200px #131212;
 }
