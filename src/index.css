@@ -147,6 +147,11 @@ img{
     font-size: 1rem;
     outline: none;
 }
+.removeBtn{
+    border-radius: 10px;
+    height: 20px;
+    background-color: rgb(154, 155, 145);
+}
 .checkoutBtn{
     padding: 10px 20px;
     font-size: 1rem;
@@ -155,4 +160,16 @@ img{
     border-radius: 10px;
     align-self: center;
     margin: 2rem 1rem;
+}
+.cartTotal{
+    align-self: flex-end;
+    margin: 20px 50px;
+}
+.totalLabel{
+    font-size: 1em;
+}
+.totalAmount{
+    color: rgb(202, 13, 92,0.9);
+    font-size: 20px;
+    font-weight: bolder;
 }
