@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import shoppingImage from './shopping.jpg'; 
+import shoppingImage from './shopping.jpg';
 
 function HomeButton({ setShowItemCards }) {
   const [isBackgroundImage, setBackgroundImage] = useState(false);
