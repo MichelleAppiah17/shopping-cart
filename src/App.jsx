@@ -29,7 +29,7 @@ function App() {
   const HomeView = (
     <div style={{ display: "flex", width: "100%", height: "100vh" }}>
       <img
-        src="src/components/shopping.jpg"
+        src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b25saW5lJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D"
         style={{
           width: "100%",
           height: "auto",
