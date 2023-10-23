@@ -30,13 +30,16 @@ function Cart({
           ) : (
             products.map((product, index) => (
               <div className='cartItem' key={index}>
-                <img src={product.image} alt={product.title} />
-                <div className='itemInfo'>
+               <div>
+                 <img src={product.image} alt={product.title} />
+               </div>
+               <div className='itemInfo'>
                   <h3>{product.title}</h3>
                   <span className='itemTotal'>
                     {`Total: $${(product.price * product.count).toFixed(2)}`}
                   </span>
                 </div>
+                <div className='select-and-remove'>
                 <select
                   className='count'
                   value={product.count}
@@ -60,6 +63,7 @@ function Cart({
                 >
                   X
                 </button>
+                </div>
               </div>
             ))
           )}
